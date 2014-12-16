@@ -71,7 +71,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 #    'crispy_forms',
-    'heart',
+#    'heart',
 #    'debug_toolbar',
 #    'gunicorn',
 )
@@ -98,7 +98,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'bargedb',                      
-        'USER': 'postgres',
+        'USER': 'peter',
         'PASSWORD': 'cosmodog',
         'HOST': 'localhost'
     }
