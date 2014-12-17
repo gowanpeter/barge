@@ -1,3 +1,5 @@
+from django.db import models
+
 #many to many
 class Documentation(models.Model):
 	documentation_name = models.CharField(max_length=45, blank=True)
