@@ -21,6 +21,9 @@ class Piece(models.Model):
 	#many to one
 	exhibition = models.ForeignKey('Exhibition')
 	publication = models.ForeignKey('Publication')
+	
+	def __str__(self):              
+		return self.piece_name
 
 class ConditionChoice(models.Model):
 	conditions = (
@@ -32,6 +35,10 @@ class ConditionChoice(models.Model):
 		)
 	name = models.CharField(max_length=60)
 	condition = models.CharField(max_length=1, choices=conditions)
+	
+
+	def __str__(self):              
+		return self.name
 
 #one to many
 #one publication has many pieces, foreign key is publication_id and is in table 'Pieces'
@@ -40,8 +47,11 @@ class ConditionChoice(models.Model):
 class Publication(models.Model):
 	publication_name = models.CharField(max_length=45, blank=True, default="")
 	publication_date = models.DateField(blank=True, null=True)
-	publication_author = models.CharField(max_length=45, blank=True)
-	publication_media = models.CharField(max_length=45, blank=True)
+	publication_author = models.CharField(max_length=45, blank=True, default="")
+	publication_media = models.CharField(max_length=45, blank=True, default="")
+	
+	def __str__(self):              
+		return self.publication_name
 
 
 #one to many
@@ -50,4 +60,7 @@ class Publication(models.Model):
 class Exhibition(models.Model):
 	exhibition_name = models.CharField(max_length=45, blank=True, default="")
 	exhibition_date = models.DateField(blank=True, null=True)
-	exhibition_description = models.CharField(max_length=1000, blank=True)
+	exhibition_description = models.CharField(max_length=1000, blank=True, default="")
+	
+	def __str__(self):              
+		return self.exhibition_name
