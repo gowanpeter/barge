@@ -2,7 +2,7 @@ from django.db import models
 
 #many to many
 class Documentation(models.Model):
-	documentation_name = models.CharField(max_length=45, blank=True)
+	documentation_name = models.CtarField(max_length=45, blank=True)
 	documentation_pieces = models.ManyToManyField(Piece, through="documentation_link_piece", through_fields=('Documentation', 'Piece'))
 	
 	def __str__(self):              
